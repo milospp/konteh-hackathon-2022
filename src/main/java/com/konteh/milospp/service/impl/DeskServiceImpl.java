@@ -24,6 +24,6 @@ public class DeskServiceImpl extends JPAServiceImpl<Desk> implements DeskService
 
     @Override
     public List<Desk> getRoomDesks(String roomId) {
-        return deskRepository.getAllByRoomId(roomId);
+        return deskRepository.getAllByRoomIdAndActiveIsTrue(roomId);
     }
 }

@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface DeskRepository extends JpaRepository<Desk, String> {
-    List<Desk> getAllByRoomId(String roomId);
+    List<Desk> getAllByRoomIdAndActiveIsTrue(String roomId);
 }

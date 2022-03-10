@@ -24,6 +24,6 @@ public class RoomServiceImpl extends JPAServiceImpl<Room> implements RoomService
 
     @Override
     public List<Room> getFacultyRooms(String facultyId) {
-        return roomRepository.getAllByFacultyId(facultyId);
+        return roomRepository.getAllByFacultyIdAndActiveIsTrue(facultyId);
     }
 }
