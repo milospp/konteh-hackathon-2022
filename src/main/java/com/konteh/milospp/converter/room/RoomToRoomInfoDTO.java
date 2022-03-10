@@ -24,6 +24,7 @@ public class RoomToRoomInfoDTO extends AbstractConverter<Room, RoomInfoDTO> {
         return RoomInfoDTO.builder()
                 .desks(desks)
                 .id(source.getId())
+                .name(source.getName())
                 .facultyId(source.getFaculty().getId())
                 .build();
     }

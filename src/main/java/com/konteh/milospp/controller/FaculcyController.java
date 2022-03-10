@@ -25,6 +25,6 @@ public class FaculcyController {
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Collection<FacultyInfoDTO>> getFaculties() {
         List<Faculty> facultyList = facultyService.findAll();
-        return new ResponseEntity<>(toFacultyInfoDTO.convert(facultyList), HttpStatus.CREATED);
+        return new ResponseEntity<>(toFacultyInfoDTO.convert(facultyList), HttpStatus.OK);
     }
 }
