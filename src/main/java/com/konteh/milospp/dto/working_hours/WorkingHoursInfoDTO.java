@@ -10,8 +10,8 @@ import java.time.LocalTime;
 @NoArgsConstructor @Getter @Setter
 public class WorkingHoursInfoDTO {
     @NotNull
-    private LocalTime opens;
+    private String opens;
 
     @NotNull
-    private LocalTime closes;
+    private String closes;
 }

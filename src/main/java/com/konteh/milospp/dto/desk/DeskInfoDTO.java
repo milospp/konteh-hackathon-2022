@@ -1,15 +1,16 @@
 package com.konteh.milospp.dto.desk;
 
 import com.sun.istack.NotNull;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@NoArgsConstructor @Getter @Setter
+@NoArgsConstructor @Getter @Setter @Builder @AllArgsConstructor
 public class DeskInfoDTO {
+    @NotNull
+    private String id;
+
     @NotNull
     private Integer order;
 
     @NotNull
-    private Integer roomId;
+    private String roomId;
 }

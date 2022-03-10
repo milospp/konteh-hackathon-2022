@@ -17,10 +17,10 @@ public abstract class BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     @Column(name = "id")
-    protected String id;
+    private String id;
 
     @Column(name = "active", nullable = false)
-    protected Boolean active;
+    private Boolean active;
 
     public BaseEntity() {
         this.active = true;

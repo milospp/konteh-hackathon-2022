@@ -18,8 +18,8 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/faculties")
 @AllArgsConstructor
-public class FaculcyController {
-    private final FacultyService facultyService;
+public class RoomController {
+    private final FacultyService roomSe;
     private final FacultyToFacultyInfoDTO toFacultyInfoDTO;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)

@@ -2,21 +2,23 @@ package com.konteh.milospp.dto.room;
 
 import com.konteh.milospp.dto.desk.DeskInfoDTO;
 import com.sun.istack.NotNull;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalTime;
+import java.util.Collection;
 import java.util.List;
 
-@NoArgsConstructor @Getter @Setter
+@NoArgsConstructor @Getter @Setter @Builder @AllArgsConstructor
 public class RoomInfoDTO {
+    @NotNull
+    private String id;
+
     @NotNull
     private String name;
 
     @NotNull
-    private Long facultyId;
+    private String facultyId;
 
     @NotNull
-    private List<DeskInfoDTO> desks;
+    private Collection<DeskInfoDTO> desks;
 }

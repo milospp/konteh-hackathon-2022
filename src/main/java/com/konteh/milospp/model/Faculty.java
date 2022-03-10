@@ -10,11 +10,12 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "faculty")
 @NoArgsConstructor @AllArgsConstructor @Getter @Setter
 public class Faculty extends BaseEntity {
 
     @Column(name = "name", nullable = false)
-    String name;
+    private String name;
 
     @OneToOne(cascade = CascadeType.ALL)
     private WorkingHours workingHours;

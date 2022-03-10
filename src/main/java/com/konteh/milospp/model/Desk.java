@@ -9,10 +9,11 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "desk")
 @NoArgsConstructor @AllArgsConstructor @Getter @Setter
 public class Desk extends BaseEntity{
-    @Column(name = "order", nullable = false)
-    Integer order;
+    @Column(name = "desk_order", nullable = false)
+    private Integer order;
 
     @ManyToOne
     @JoinColumn(name = "room_id")
