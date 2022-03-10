@@ -11,6 +11,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 @Component
 @AllArgsConstructor
@@ -19,7 +20,7 @@ public class RoomToRoomInfoDTO extends AbstractConverter<Room, RoomInfoDTO> {
 
     @Override
     public RoomInfoDTO convert(@NotNull Room source) {
-        Collection<DeskInfoDTO> desks = deskInfoDTOIConverter.convert(source.getDesks());
+        Collection<DeskInfoDTO> desks = deskInfoDTOIConverter.convert(source.getDesks().stream().filter(x->x.getActive().booleanValue()).collect(Collectors.toList()));
 
         return RoomInfoDTO.builder()
                 .desks(desks)

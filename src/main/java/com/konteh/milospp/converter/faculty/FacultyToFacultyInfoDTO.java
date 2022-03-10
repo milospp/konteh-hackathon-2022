@@ -16,6 +16,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 @Component
 @AllArgsConstructor
@@ -26,7 +27,9 @@ public class FacultyToFacultyInfoDTO extends AbstractConverter<Faculty, FacultyI
 
     @Override
     public FacultyInfoDTO convert(@NotNull Faculty source) {
-        Collection<RoomInfoDTO> rooms = roomRoomInfoDTOIConverter.convert(source.getRooms());
+        Collection<RoomInfoDTO> rooms = roomRoomInfoDTOIConverter.convert(
+                source.getRooms().stream().filter(x->x.getActive().booleanValue()).collect(Collectors.toList())
+        );
         WorkingHoursInfoDTO workingHoursInfoDTO = workingHoursInfoDTOIConverter.convert(source.getWorkingHours());
         return FacultyInfoDTO.builder()
                 .id(source.getId())
